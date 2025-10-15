@@ -59,13 +59,13 @@ jobs: # --> tarefas a fazer
       - name: Build library
         run: |
           python -m build
-
-      - name: Publish library to GitHub Packages
+      
+      - name: Publish library to PyPI
         env:
-          TWINE_USERNAME: ${{ github.actor }}
-          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
-          python -m twine upload \
-            --repository-url https://upload.pypi.org/legacy/ \
-            dist/*
-  
+          python -m pip install --upgrade pip
+          pip install build twine
+          python -m build
+          twine upload dist/*
