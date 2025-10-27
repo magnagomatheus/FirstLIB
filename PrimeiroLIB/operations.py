@@ -27,7 +27,7 @@ def subtract(a: float, b: float) -> float:
 def multiply(a: float, b: float) -> float:
     """
     Retorna a multiplicação de dois números.
-
+    
     Args:
         a (float): Primeiro número.
         b (float): Segundo número.
@@ -52,5 +52,5 @@ def divide(a: float, b: float) -> float:
         float: Resultado da divisão (a / b).
     """
     if b == 0:
-        raise ValueError("Divisão por zero não é permitida.")
+        raise ValueError("Divisão por zero não é permitidaaa.")
     return a / b
